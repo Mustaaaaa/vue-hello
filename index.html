@@ -15,24 +15,21 @@
     <div id="app">
         <h1>{{ titolo }}</h1>
         <p>{{ testo }}</p>
-        <img id="image" src="./img/1_OrjCKmou1jT4It5so5gvOA.jpg" alt="">
+        <img :src="image" alt="">
     </div>
 
     <script>
-        const { createApp, ref } = Vue
+        const { createApp } = Vue
 
         createApp({
-            setup() {
-                const titolo = ref('Hello vue!')
-                const testo = ref('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nam iusto quibusdam quia asperiores voluptate, cumque id! Necessitatibus similique, eligendi reiciendis veritatis possimus cumque et nesciunt fuga quos culpa ducimus!')
-                const image = document.getElementById('image')
-
+            data() {
                 return {
-                    titolo, testo, image
+                    titolo:'Hello vue!', 
+                    testo:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis nam iusto quibusdam quia asperiores voluptate, cumque id! Necessitatibus similique, eligendi reiciendis veritatis possimus cumque et nesciunt fuga quos culpa ducimus!',
+                    image: './img/1_OrjCKmou1jT4It5so5gvOA.jpg',
                 }
             }
         }).mount('#app')
     </script>
 </body>
-
 </html>
